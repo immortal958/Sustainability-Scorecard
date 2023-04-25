@@ -4,12 +4,12 @@
 <h2>Installation</h2>
 To install and run the application locally, follow these steps:
 
-Clone this repository using git clone https://github.com/immortal958/Sustainability-Scorecard
+1.Clone this repository using git clone https://github.com/immortal958/Sustainability-Scorecard
 
-Navigate to the project directory using cd project-name
+2.Navigate to the project directory using cd project-name
 
-Install the dependencies using npm install
+3.Install the dependencies using npm install
 
-Start the application using npm start
+4.Start the application using npm start
 
-The application will now be accessible at http://localhost:3000.
+5.The application will now be accessible at http://localhost:3000.
