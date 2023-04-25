@@ -23,3 +23,10 @@ To install and run the application locally, follow these steps:
 4.Run the main.py file in project
 
 5.The application will now be accessible at http://127.0.0.1:5000
+
+<h2>Libraries and dependencies</h2>
+
+<h2>Usage</h2>
+
+<h2>Screenshots</h2>
+
