@@ -36,7 +36,7 @@ import sql file in the xamp phpmyadmin
 
 1.User needs to create an account using signup page.Later on user can login using their credientials through loginpage.
 
-2.Inially user ask to fill the form regarding transportation,food-style,and electricity.
+2.Inially user is asked to fill the form regarding transportation modes(ie the distance travelled in these modes),food-style() and electricity.
 
 3.User is provided with personalized recommendations which is given as tasks for reducing carbon footprint.
 
