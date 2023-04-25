@@ -18,8 +18,8 @@ To install and run the application locally, follow these steps:
 
 2.Navigate to the project directory using cd Sustainability-Scorecard
 
-3.Install the dependencies using npm install
+3.Install the dependencies in cmd using install command
 
-4.Start the application using npm start
+4.Run the main.py file in project
 
-5.The application will now be accessible at http://localhost:3000.
+5.The application will now be accessible at http://127.0.0.1:5000
