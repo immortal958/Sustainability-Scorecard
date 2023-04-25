@@ -28,5 +28,13 @@ To install and run the application locally, follow these steps:
 
 <h2>Usage</h2>
 
-<h2>Screenshots</h2>
+1.User needs to create an account using signup page.Later on user can login using login page by username and password.
+
+2.Inially user ask to fill the form regarding transportation,food-style,and electricity.
+
+3.
+
+<h2>Examples</h2>
+
+Here are some screenshots that showcase the key features of the application:
 
