@@ -46,3 +46,11 @@ import sql file in the xamp phpmyadmin
 
 Here are some screenshots that showcase the key features of the application:
 
+![SIGNUP](https://user-images.githubusercontent.com/106856660/234444176-ee8ea58c-5ed0-433e-a21a-c532ea1ad483.png)
+
+![LOGIN (2)](https://user-images.githubusercontent.com/106856660/234444277-2ac2e482-3bd4-4536-b5b5-1332c678659e.png)
+
+![HOME 2](https://user-images.githubusercontent.com/10685![TASKS](https://user-images.githubusercontent.com/106856660/234444370-d04d10f1-5a89-4e95-be8f-94fdff1c3e47.png)
+6660/234444350-03c1481e-aec1-4bb5-9735-e7f5be2b3e4c.png)![BLOGS](https://user-images.githubusercontent.com/106856660/234444404-ccf50a51-a3f8-4e59-89c7-19b912a25b24.png)
+
+
