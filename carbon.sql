@@ -46,60 +46,47 @@ CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL
-  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `electricity` (
-  `eid` int(11) NOT NULL,
+
+CREATE TABLE `emission` (
+  `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `amount` int(11) NOT NULL,
-  `carbonemmited` int(11) NOT NULL
+  `temmsion` int(11) NOT NULL,
+  `elecemmision` int(11) NOT NULL,
+  `femmision` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `transport` (
-  `tid` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `mode` varchar(20) NOT NULL,
-  `distance` int(20) NOT NULL,
-  `carbonemmited` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE `food` (
-  `fid` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `item` varchar(20) NOT NULL,
-  `carbonemmited` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+--
+-- Indexes for table `test`
+--
 ALTER TABLE `test`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE `electricity`
-  ADD PRIMARY KEY (`eid`);
 
-
-ALTER TABLE `food`
-  ADD PRIMARY KEY (`fid`);
-
-ALTER TABLE `transport`
-  ADD PRIMARY KEY (`tid`);
-
+--
+-- Indexes for table `user`
+--
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `emsiion`
+  ADD PRIMARY KEY (`id`);
 
-ALTER TABLE `food`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
-ALTER TABLE `transport`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
-ALTER TABLE `electricity`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `emission`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+
+--
+-- AUTO_INCREMENT for table `user`
+--
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
