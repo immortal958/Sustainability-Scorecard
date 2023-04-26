@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup/Login Form</title>
+	<style>
+		* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body{
+	background-image: url('static/assets/img/back6.jpg');
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 3px solid #0f0f0f;
+	padding: 20px;
+	width: 400px;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+	
+	
+}
+
+.form h2 {
+	margin-top: 0;
+	font-family: 'Montserrat',sans-serif;
+	text-decoration: underline;
+}
+
+.form label {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-family: 'Montserrat',sans-serif;
+}
+
+.form input {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.form button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	margin:auto;
+}
+
+.form button:hover {
+	background-color: #3e8e41;
+	box-shadow: 0px 0px 10px rgba(125,165,0,0.2);
+}
+input[type="text"], input[type="password"],input[type="email"], button {
+  border-radius: 10px;
+}
+input[type="text"], input[type="password"] {
+  transition: all 0.3s ease;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+  border: 2px solid #FFA500;
+  box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.2);
+  outline: none;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form id="login" class="form" action="/signup" method="post">
+			<h2>SIGNUP</h2>
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<label for="Email">Email</label>
+			<input type="email" id="email" name="email" required>
+			<button type="submit" class="btn">signup</button><br>
+			<label>Already have an account?<a href="/login" method="post">Login</a></label>
+		</form>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

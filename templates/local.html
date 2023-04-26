@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin:0;
+    padding:0;
+
+}
+.logo{
+    width:24%;
+    display: flex;
+    justify-content:center;
+    align-items: center     ;
+}
+.logo img{
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 50px;
+
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width:50%;
+    /* background-color: rgb(139, 181, 81) ; */
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px ;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: green;
+
+   
+
+}
+.item{
+    font-size:x-large;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color:black
+
+}
+.rightnav{
+    width:50%;
+    text-align: right;
+    width: 50%;
+    /* background-color: black; */
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+.background{
+    background: rgba(0, 0 ,0, 0.7) url('static/assets/img/back6.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+
+
+}
+.firstSection{
+    height: 100vh;
+}
+.box-main{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 85%;
+}
+.firstHalf{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.secondHalf{
+    width: 30%;
+
+}
+.secondHalf img{
+    width: 90%;
+    /* padding: 2px 0; */
+    border: 4px solid grey;
+    border-radius: 150px;
+    display: block;
+    margin:auto;
+
+
+}
+.text-big{
+    font-size: 40px;
+
+}
+.text-small{
+    font-size: 18px;
+
+}
+.btn{
+    padding: 8px 20px;
+    margin:7px 3px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+
+} 
+.section{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width:80%;
+    margin: auto; 
+    font-family: 'Ubuntu', sans-serif;
+}
+.paras{
+    padding: 0px 65px;
+}
+.section-left{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width:80%;
+    margin: auto; 
+    flex-direction: row-reverse;
+
+}
+.sectionTag{
+    padding: 16px 0px;
+}
+.sectionSubTag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact{
+    background-color: #DDDDDD;
+    height: 34vh;
+}
+.text-center{
+    text-align: center;
+
+}
+.form{
+    max-width: 344px;
+    margin: auto;
+}
+.form input{
+    width: 100%;
+    font-size: 19px;
+    border: 2px solid grey;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  /* Style for the footer links */
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  footer li:last-child {
+	margin-right: 0;
+  }
+  
+  footer a {
+	color: #fff;
+	text-decoration: none;
+  }
+  body {
+			margin: 0;
+			padding: 0;
+            background-color: lightcyan;
+		}
+
+        #header {
+        background-image: url("static/assets/img/6.jpg");
+        background-size:cover;
+		background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        }
+
+
+		#header h1 {
+			text-align: center;
+			color: white;
+			padding-top: 50px;
+			font-size: 3em;
+            text-decoration-style: solid;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		#content {
+			padding: 50px;
+		}
+
+		#content h2 {
+			font-size: 2em;
+			margin-bottom: 20px;
+		}
+
+		#content p {
+			font-size: 1.2em;
+			line-height: 1.5;
+			margin-bottom: 30px;
+		}
+
+		#video {
+			margin-top: 10px;
+			text-align: center;
+		}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo"><img src="static/assets/img/logo2.jpg" alt="logo"></div>
+      <li class="item"><a href="/main">Home</a></li>
+      <li class="item"><a href="/task">Task</a></li>
+      <li class="item"><a href="/progress">Progress</a></li>
+      <li class="item"><a href="/blogs">Blogs</a></li>
+      <li class="item"><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+  <div id="header">
+		<h1>Local food help in lower of carbon footprint</h1>
+	</div>
+
+	<div id="content">
+		<h2>Does eating local food lower your carbon footprint?
+        </h2>
+        <h4>
+            Beth Kayser
+            </h4>
+		<p>The short and sweet answer is: yes, eating local food can lower your carbon footprint. But there are some important caveats to keep in mind!
+        </p>
+
+		<h3>Why does eating local food lower your carbon footprint? </h3>
+		<p>Essentially, food that's been grown near you will have travelled less miles to get to you. A lot of the food we eat here in the UK is imported, meaning it's travelled many miles by road, sea or air to get to us and/or our supermarket shelves. So by making a conscious effort to eat food that's grown close to you, you'll be doing your bit for the planet and for your local economy.
+
+            Not all imported foods have the same carbon price tag though, as we'll explore further below.
+            
+            Sea freighted vs air freighted
+            
+            Food that travels to you via sea has a much lower carbon footprint than food that's been flown. According to Mike Berners-Lee's How Bad Are Bananas, food that's been transported by boat has about 1% the carbon footprint of an airfreighted product. Food that keeps well, like bananas, are typically shipped by sea, as they can last for a longer journey. However, food that doesn't keep well, like asparagus, tend to be flown in from where they've been grown. In Bananas, Berners-Lee found that a pack of asparagus that's been grown locally and in-season had a carbon footprint of 1.1kg CO2e, versus a pack that'd been airfreighted in from Peru, which came in at a whopping 4.7kg CO2e.
+
+            So if eating local ingredients isn't possible at the moment, you can still check the tag of what you're buying to see where its come from, and consider whether it's been shipped by sea or air!
+            </p>
+
+		<h3>Food grown in artificial environments
+        </h3>
+		<p>
+            Another important thing to keep in mind is whether or not your food has been grown in an artificially-heated environment, like a greenhouse. Food grown in these environments are just as carbon expensive as airfreighted food (How Bad Are Bananas).
+            
+            So if you find a product that's been grown locally, but it's not currently in season where you live, then it's likely to have been grown in a greenhouse. Take strawberries for example: a 250g punnet of strawberries that have been grown in a greenhouse will have a footprint seven times higher than its in-season counterpart.
+            
+            If you don't want to wait for things to come into season to eat them, one idea is to buy and freeze them during their growing season. That was you can enjoy them all year long without needing to add expensive greenhouse-grown or airfreighted products to your diet. Also, they'll likelier to be tastier!</p>
+         
+	</div>
+    <div id="video">
+		<iframe width="560" height="315" src="static/assets/img/How eating local can be a small step in reducing your carbon footprint.mp4" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+	<footer>
+		<ul>
+			<li><a href="https://github.com/immortal958/Sustainability-Scorecard">Github</a></li>
+			<li><a href="https://www.twitter.com">Twitter</a></li>
+			<li><a href="https://www.instagram.com">Instagram</a></li>
+			<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+		</ul>
+		<p>&copy; all rights are reserved </p>
+	</footer>
+</body>
+
+</html>

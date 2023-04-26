@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin:0;
+    padding:0;
+
+}
+.logo{
+    width:24%;
+    display: flex;
+    justify-content:center;
+    align-items: center     ;
+}
+.logo img{
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 50px;
+
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width:50%;
+    /* background-color: rgb(139, 181, 81) ; */
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px ;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: green;
+
+   
+
+}
+.item{
+    font-size:x-large;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color:black
+
+}
+.rightnav{
+    width:50%;
+    text-align: right;
+    width: 50%;
+    /* background-color: black; */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  /* Style for the footer links */
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  footer li:last-child {
+	margin-right: 0;
+  }
+  
+  footer a {
+	color: #fff;
+	text-decoration: none;
+  }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo"><img src="static/assets/img/logo2.jpg" alt="logo"></div>
+      <li class="item"><a href="/main">Home</a></li>
+      <li class="item"><a href="/task">Task</a></li>
+      <li class="item"><a href="/progress">Progress</a></li>
+      <li class="item"><a href="/blogs">Blogs</a></li>
+      <li class="item"><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+
+  
+	<footer>
+		<ul>
+			<li><a href="https://github.com/immortal958/Sustainability-Scorecard">Github</a></li>
+			<li><a href="https://www.twitter.com">Twitter</a></li>
+			<li><a href="https://www.instagram.com">Instagram</a></li>
+			<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+		</ul>
+		<p>&copy; all rights are reserved </p>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin:0;
+    padding:0;
+
+}
+.background{
+    background: rgba(0, 0 ,0, 0.7) url('static/assets/img/back6.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+
+
+}
+.logo{
+    width:24%;
+    display: flex;
+    justify-content:center;
+    align-items: center     ;
+}
+.logo img{
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 50px;
+
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width:50%;
+    /* background-color: rgb(139, 181, 81) ; */
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px ;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: green;
+
+   
+
+}
+.item{
+    font-size:x-large;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color:black
+
+}
+.rightnav{
+    width:50%;
+    text-align: right;
+    width: 50%;
+    /* background-color: black; */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-size: x-large;
+  }
+  body {
+			  margin: 0;
+			  padding: 0;
+			  background-color: lightcyan;
+		  }
+  
+		  #header {
+		  background-image: url("static/assets/img/9.jpg");
+		  background-size: contain;
+		  background-position: center;
+		  height: 100vh;
+		  }
+  
+  
+		  #header h1 {
+			  text-align: center;
+			  color:black;
+			  padding-top: 50px;
+			  font-size: 3em;
+			  text-decoration-style: solid;
+			  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		  }
+  
+		  #content {
+			  padding: 50px;
+		  }
+  
+		  #content h2 {
+			  font-size: 2em;
+			  margin-bottom: 20px;
+		  }
+  
+		  #content p {
+			  font-size: 1.2em;
+			  line-height: 1.5;
+			  margin-bottom: 30px;
+		  }
+  
+		  #video {
+			  margin-top: 10px;
+			  text-align: center;
+		  }
+
+  
+  /* Style for the footer links */
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  footer li:last-child {
+	margin-right: 0;
+  }
+  
+  footer a {
+	color: #fff;
+	text-decoration: none;
+  }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo"><img src="static/assets/img/logo2.jpg" alt="logo"></div>
+      <li class="item"><a href="/main">Home</a></li>
+      <li class="item"><a href="/task">Task</a></li>
+      <li class="item"><a href="/progress">Progress</a></li>
+      <li class="item"><a href="/blogs">Blogs</a></li>
+      <li class="item"><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+	  <div id="header">
+		  <h1>Supermarket food waste</h1>
+	  </div>
+  
+	  <div id="content">
+		  <h2>The Problem of Supermarket Food Waste</h2>
+		  <p>Supermarkets around the world generate massive amounts of food waste, with estimates suggesting that up to one-third of all food produced globally is wasted. This waste has significant economic, social, and environmental impacts, including increased greenhouse gas emissions, lost resources, and hunger.</p>
+  
+		  <h3>Causes of Supermarket Food Waste</h3>
+		  <p>Supermarket food waste can be caused by a variety of factors, including overproduction, unsold or expired products, quality control, and supply chain inefficiencies. Food waste can also result from consumer behavior, such as purchasing more food than they need or throwing away edible food at home</p>
+  
+		  <h2>Consequences of Supermarket Food Waste</h2>
+		  <p>The consequences of supermarket food waste are significant, affecting both the environment and society. Food waste generates greenhouse gas emissions and contributes to climate change. It also represents a loss of resources, including water, land, and labor. Additionally, food waste contributes to global hunger and food insecurity, with an estimated 690 million people worldwide suffering from hunger.</p>
+	  </div>
+  
+	  <div id="video">
+		  <iframe width="560" height="315" src="static/assets/img/Let's Talk Farm to Fork_ Fight Food Waste (Full Podcast).mp4" frameborder="0" allowfullscreen></iframe>
+	  </div>  
+  
+	<footer>
+		<ul>
+			<li><a href="https://github.com/immortal958/Sustainability-Scorecard">Github</a></li>
+			<li><a href="https://www.twitter.com">Twitter</a></li>
+			<li><a href="https://www.instagram.com">Instagram</a></li>
+			<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+		</ul>
+		<p>&copy; all rights are reserved </p>
+	</footer>
+</body>
+
+</html>

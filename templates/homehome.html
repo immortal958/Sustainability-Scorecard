@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin:0;
+    padding:0;
+
+}
+.logo{
+    width:24%;
+    display: flex;
+    justify-content:center;
+    align-items: center     ;
+}
+.logo img{
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 50px;
+
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width:50%;
+    /* background-color: rgb(139, 181, 81) ; */
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px ;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: green;
+
+   
+
+}
+.item{
+    font-size:x-large;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color:black
+
+}
+.rightnav{
+    width:50%;
+    text-align: right;
+    width: 50%;
+    /* background-color: black; */
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+.background{
+    background: rgba(0, 0 ,0, 0.7) url('static/assets/img/back6.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+
+
+}
+.firstSection{
+    height: 100vh;
+}
+.box-main{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 85%;
+}
+.firstHalf{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.secondHalf{
+    width: 30%;
+
+}
+.secondHalf img{
+    width: 90%;
+    /* padding: 2px 0; */
+    border: 4px solid grey;
+    border-radius: 150px;
+    display: block;
+    margin:auto;
+
+
+}
+.text-big{
+    font-size: 40px;
+
+}
+.text-small{
+    font-size: 18px;
+
+}
+.btn{
+    padding: 8px 20px;
+    margin:7px 3px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+
+} 
+.section{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width:80%;
+    margin: auto; 
+    font-family: 'Ubuntu', sans-serif;
+}
+.paras{
+    padding: 0px 65px;
+}
+.section-left{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width:80%;
+    margin: auto; 
+    flex-direction: row-reverse;
+
+}
+.sectionTag{
+    padding: 16px 0px;
+}
+.sectionSubTag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact{
+    background-color: #DDDDDD;
+    height: 34vh;
+}
+.text-center{
+    text-align: center;
+
+}
+.form{
+    max-width: 344px;
+    margin: auto;
+}
+.form input{
+    width: 100%;
+    font-size: 19px;
+    border: 2px solid grey;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  /* Style for the footer links */
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  footer li:last-child {
+	margin-right: 0;
+  }
+  
+  footer a {
+	color: #fff;
+	text-decoration: none;
+  }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo"><img src="static/assets/img/logo2.jpg" alt="logo"></div>
+      <li class="item"><a href="/main">Home</a></li>
+      <li class="item"><a href="/task">Task</a></li>
+      <li class="item"><a href="/progress">Progress</a></li>
+      <li class="item"><a href="/blogs">Blogs</a></li>
+      <li class="item"><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+
+  <section class="background firstSection">
+    <div class="box-main">
+      <div class="firstHalf">
+        <p class="text-big">Carbon footprint</p><br>
+        <p class="text-small">Carbon footprint is a measure of the total amount of greenhouse gases, primarily carbon dioxide, released into the atmosphere as a result of human activities. These activities can include burning fossil fuels for transportation, heating and cooling, and electricity production, as well as deforestation, industrial processes, and agriculture. The accumulation of greenhouse gases in the atmosphere is causing climate change, which is having significant impacts on the environment and human societies worldwide. Understanding and reducing carbon footprint has become a critical issue in the fight against climate change, and can involve a range of individual and collective actions, from using energy-efficient appliances to supporting renewable energy sources and reducing meat consumption.
+
+        </p>
+      </div>
+      <div class="secondHalf">
+        <img src="static/assets/img/co.jpg" alt="image">
+      </div>
+
+
+    </div>
+  </section>
+
+
+  
+  <section class="section">
+    <div class="paras">
+    <p class="sectionTag text-big">Transportation</p>
+    <p class="sectionSubTag text-small">Transportation is a significant contributor to carbon emissions and has a major impact on our carbon footprint. Vehicles emit greenhouse gases, such as carbon dioxide and methane, into the atmosphere when they burn fossil fuels. The more we drive, the more emissions we produce. Personal vehicles, such as cars and trucks, are the biggest culprits, but other forms of transportation, such as airplanes and trains, also have a significant impact. Choosing to walk, bike, or take public transportation, such as buses and trains, can help reduce our carbon footprint by decreasing the number of vehicles on the road. Additionally, electric and hybrid vehicles produce fewer emissions than traditional gasoline or diesel vehicles, making them a more sustainable choice for those who need to drive. By making conscious choices about how we get around, we can make a significant impact on our carbon footprint and contribute to a more sustainable future.</p>
+    </div>
+    <div class="thumbnail">
+      <img src="static/assets/img/transport.jpg" alt="" class="imgfluid">
+    </div>
+  </section>
+
+  <section class="section section-left">
+    <div class="paras">
+    <p class="sectionTag text-big">Food-Style</p>
+    <p class="sectionSunTag text-small">Our food choices can have a significant impact on our carbon footprint. The production and transportation of food are energy-intensive processes that contribute to greenhouse gas emissions. Animal agriculture is a significant contributor to carbon emissions, with cows and other livestock producing methane during digestion. Choosing plant-based meals over meat can significantly reduce our carbon footprint. Additionally, choosing locally sourced food reduces the energy needed for transportation. Eating seasonally can also reduce the energy needed for refrigeration and transportation. Lastly, reducing food waste can also reduce our carbon footprint by decreasing the amount of energy needed for production, transportation, and disposal of food. By making conscious choices about what we eat and where it comes from, we can significantly reduce our impact on the environment and contribute to a more sustainable future.</p>
+    </div>
+    <div class="thumbnail">
+      <img src="static/assets/img/food-style1.jpg" alt="" class="imgfluid">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paras">
+    <p class="sectionTag text-big">Electricity</p>
+    <p class="sectionSunTag text-small">Electricity is a major contributor to carbon emissions and has a significant impact on our carbon footprint. The majority of electricity is generated using fossil fuels, such as coal, oil, and natural gas, which release carbon dioxide into the atmosphere when burned. The more electricity we use, the more emissions we produce. Choosing to reduce our electricity consumption, for example by turning off lights and appliances when not in use, can significantly reduce our carbon footprint. Additionally, transitioning to renewable energy sources, such as solar, wind, and hydroelectric power, can help to reduce our reliance on fossil fuels and decrease our carbon emissions. By making conscious choices about how we consume and generate electricity, we can make a significant impact on our carbon footprint and contribute to a more sustainable future.</p>
+    </div>
+    <div class="thumbnail">
+      <img src="static/assets/img/electricity1.jpg" alt="" class="imgfluid">
+    </div>
+  </section>
+  <hr>
+	<footer>
+		<ul>
+			<li><a href="https://github.com/immortal958/Sustainability-Scorecard">Github</a></li>
+			<li><a href="https://www.twitter.com">Twitter</a></li>
+			<li><a href="https://www.instagram.com">Instagram</a></li>
+			<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+		</ul>
+		<p>&copy; all rights are reserved </p>
+	</footer>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

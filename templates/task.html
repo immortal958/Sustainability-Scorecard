@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin:0;
+    padding:0;
+
+}
+
+body{
+	background-image: url(static/assets/img/back6.jpg);
+}
+.background{
+    background: rgba(0, 0 ,0, 0.7) url('static/assets/img/back6.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.logo{
+    width:24%;
+    display: flex;
+    justify-content:center;
+    align-items: center     ;
+}
+.logo img{
+    width: 35px;
+    border: 3px solid black;
+    border-radius: 50px;
+
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width:50%;
+    /* background-color: rgb(139, 181, 81) ; */
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px ;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: green;
+
+   
+
+}
+.item{
+    font-size:x-large;
+}
+.nav-list li a:hover{
+    text-decoration: none;
+    color:black
+
+}
+.rightnav{
+    width:50%;
+    text-align: right;
+    width: 50%;
+    /* background-color: black; */
+}
+h2{
+            text-align: center;
+            font-family: sans-serif;
+            color: maroon;
+            border-bottom: 1px solid rgb(200, 200, 200);
+        }
+        .button-container {
+            display: block;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            gap: 100px;
+        }
+
+        .button-container button {
+            width: 50%;
+            margin: 1% auto;
+            padding: 10px ; 
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(230, 103, 30, 0.3);
+}
+
+        .button-container button:hover {
+            background-color: #0069d9;
+        }
+
+        .button-container button:focus {
+            outline: none;
+        }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  /* Style for the footer links */
+  footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  footer li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  footer li:last-child {
+	margin-right: 0;
+  }
+  
+  footer a {
+	color: #fff;
+	text-decoration: none;
+  }
+  body {
+	  font-family: Arial, sans-serif;
+	  margin: 0;
+	  padding: 0;
+  }
+  
+  header {
+	  background-color: #333;
+	  color: #fff;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  padding: 20px;
+  }
+  
+  nav ul {
+	  display: flex;
+  }
+  
+  nav li {
+	  margin-right: 20px;
+  }
+  
+  nav a {
+	  color: #fff;
+	  text-decoration: none;
+  }
+  
+  main {
+	  padding: 20px;
+  }
+  
+  footer {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 20px;
+	  text-align: center;
+  }
+  .form{
+	justify-content: center;
+	align-items: center;
+	display: inline;
+  }
+  label {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+select{
+	display: block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+
+}
+button{
+	display: block;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo"><img src="static/assets/img/logo2.jpg" alt="logo"></div>
+      <li class="item"><a href="/main">Home</a></li>
+      <li class="item"><a href="/task">Task</a></li>
+      <li class="item"><a href="/progress">Progress</a></li>
+      <li class="item"><a href="/blogs">Blogs</a></li>
+      <li class="item"><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+  <h2>Reduce your impact now</h2>
+  <div class="button-container">
+      <div><a href="/reducet"><button>Take public transportation</button></a></div>
+      <div><a href="/reducee"><button>Run appliances on eco Mode</button></a></div>
+      <div><a href="/reducet"><button>avoid unnecessary trips</button></a></div>
+      <div><a href="/reducee"><button>Switch to LED when old bulb dies</button></a></div>
+      <div><a href="/reducef"><button>Reuse Pasta water on plants</button></a></div>
+      <div><a href="/reducee"><button>Turn off unnecessary lights</button></a></div>
+      <div><a href="/reducet"><button>Carpool with friends or family</button></a></div>
+      <div><a href="/reducef"><button>Choose a plant-based meal instead of meat</button></a></div>
+      <div><a href="/reducef"><button>choose a vegetarian meal instead of fish</button></a></div>
+      
+      
+      
+    
+      
+      
+  </div>
+	<footer>
+		<ul>
+			<li><a href="https://github.com/immortal958/Sustainability-Scorecard">Github</a></li>
+			<li><a href="https://www.twitter.com">Twitter</a></li>
+			<li><a href="https://www.instagram.com">Instagram</a></li>
+			<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+		</ul>
+		<p>&copy; all rights are reserved </p>
+	</footer>
+</body>
+
+</html>
