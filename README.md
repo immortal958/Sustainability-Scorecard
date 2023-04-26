@@ -38,9 +38,9 @@ import sql file in the xamp phpmyadmin
 
 2.Inially user is asked to fill the form regarding transportation modes(ie the distance travelled in these modes),food-style() and electricity.
 
-3.User is provided with personalized recommendations which is given as tasks for reducing carbon footprint.
+3.User is provided with personalized recommendations which are given in the form of tasks for reducing carbon footprint.
 
-4.User can read the blog page which gives awarness abount carbon footprint impact
+4.User can read the blogs page which gives awarness abount carbon footprint impact on the nature and gives the benefits of using the alternatives.
 
 <h2>Examples</h2>
 
