@@ -45,7 +45,7 @@ db=SQLAlchemy(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id)) or Hospitaluser.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
 
 class Test(db.Model):
@@ -53,34 +53,12 @@ class Test(db.Model):
     name=db.Column(db.String(50))
 
 
-
-class Hospitaluser(UserMixin,db.Model):
+class emission(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    hcode=db.Column(db.String(20))
-    email=db.Column(db.String(50))
-    password=db.Column(db.String(1000))
-
-
-class Hospitaldata(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
-    hcode=db.Column(db.String(20),unique=True)
-    hname=db.Column(db.String(100))
-    normalbed=db.Column(db.Integer)
-    hicubed=db.Column(db.Integer)
-    icubed=db.Column(db.Integer)
-    vbed=db.Column(db.Integer)
-
-class Trig(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
-    hcode=db.Column(db.String(20))
-    normalbed=db.Column(db.Integer)
-    hicubed=db.Column(db.Integer)
-    icubed=db.Column(db.Integer)
-    vbed=db.Column(db.Integer)
-    querys=db.Column(db.String(50))
-    date=db.Column(db.String(50))
-
-
+    elecemmision=db.Column(db.Integer)
+    femmision=db.Column(db.Integer)
+    temmsion=db.Column(db.Integer)
+    userid=db.Column(db.Integer)
 
 class User(UserMixin,db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -102,10 +80,6 @@ def home():
         return render_template("index.html")"""
     
 
-@app.route("/trigers")
-def trigers():
-    query=Trig.query.all() 
-    return render_template("trigers.html",query=query)
 
 
 @app.route('/signup',methods=['POST','GET'])
@@ -122,37 +96,138 @@ def signup():
 #task link route
 
 @app.route("/profile")
+def profile():
+    return render_template("profile.html",username=current_user.username)
+
+@app.route("/meat")
+def meat():
+    return render_template("meat.html")
+@app.route("/diet")
+def diet():
+    return render_template("diet.html")
+@app.route("/lunch")
+def lunch():
+    return render_template("lunch.html")
+@app.route("/lower")
+def lower():
+    return render_template("lower.html")
+@app.route("/local")
+def local():
+    return render_template("local.html")
+@app.route("/bio")
+def bio():
+    return render_template("bio.html")
+@app.route("/waste")
+def waste():
+    return render_template("waste.html")
+@app.route("/talk")
+def talk():
+    return render_template("talk.html")
+@app.route("/task")
 def task():
-    return render_template("signin.html")
+    return render_template("task.html")
+
+@app.route("/main")
+def hom():
+    return render_template("homehome.html")
+
+@app.route("/reducef")
+def redf():
+    id=current_user.id
+    val=list(emission.query.with_entities(emission.femmision).filter_by(userid=id).first())
+    newval=val[0]-2
+    new_user=db.engine.execute(f"UPDATE `emission` set femmision={newval} where(userid={current_user.id})")
+    return render_template("homehome.html")
+@app.route("/reducet")
+def redt():
+    id=current_user.id
+    val=list(emission.query.with_entities(emission.temmsion).filter_by(userid=id).first())
+    newval=val[0]-2
+    new_user=db.engine.execute(f"UPDATE `emission` set temmision={newval} where(userid={current_user.id})")
+    return render_template("homehome.html")
+@app.route("/reduceel")
+def redele():
+    id=current_user.id
+    val=list(emission.query.with_entities(emission.elecemmision).filter_by(userid=id).first())
+    newval=val[0]-2
+    new_user=db.engine.execute(f"UPDATE `emission` set elecemmision={newval} where(userid={current_user.id})")
+    return render_template("homehome.html")
+@app.route("/progress")
+@login_required
+def progress():
+    id=current_user.id
+    val3=list(emission.query.with_entities(emission.elecemmision).filter_by(userid=id).first())
+    val1=list(emission.query.with_entities(emission.temmsion).filter_by(userid=id).first())
+    val2=list(emission.query.with_entities(emission.femmision).filter_by(userid=id).first())
     
+    return render_template("progress.html",value1=val1[0],value2=val2[0],value3=val3[0])
+
+@app.route("/blogs")
+def blog():
+    return render_template("main.html")
+
 
 @app.route('/login',methods=['POST','GET'])
 def login():
     if request.method=="POST":
         us=request.form.get("username")
         password=request.form.get("password")
-        us=User.query.filter_by(username=us).first()
-        ex=User.query.with_entities(User.password).all()
-        if list(ex[0])[0]==password:
-            login_user(us)
-            flash("Login Success","info")
-            return render_template("home.html")
+        """us=User.query.filter_by(username=us).first()"""
+        u=User.query.with_entities(User.username).filter_by(username=us).first()
+        ex=User.query.with_entities(User.password).filter_by(username=us).first()
+        print(u)
+        print(ex[0])
+        if ex[0]==password:
+            login_user(User.query.filter_by(username=us).first())
+            id=current_user.id
+            
+            if emission.query.with_entities(emission.elecemmision).filter_by(userid=id).first()==None:
+                return render_template("form.html")
+            else:
+                return render_template("homehome.html")
+            """return render_template("homehome.html")"""
         else:
-            """ERROR TEXT"""
             flash("Invalid Credentials","danger")
             return render_template("signin.html")
     return render_template("signin.html")
-    """srfid=request.form.get('srf')
-        dob=request.form.get('dob')
-        user=User.query.filter_by(srfid=srfid).first()
-        if user and check_password_hash(user.dob,dob):
-            login_user(user)
-            flash("Login Success","info")
-            return render_template("index.html")
-        else:
-            flash("Invalid Credentials","danger")
-            return render_template("userlogin.html")"""
 
+
+@app.route("/calculate",methods=['POST','GET'])
+def calc():
+    if request.method=="POST":
+        #get value for transport
+        walk=int(request.form.get("Walk"))
+        bus=int(request.form.get("Bus"))
+        train=int(request.form.get("Train"))
+        plane=int(request.form.get("Plane"))
+        bike=int(request.form.get("Bike"))
+        car=int(request.form.get("Car"))
+        #get value for electricity
+        ebill=int(request.form.get("bill"))
+        #get value for food
+        value=int(request.form.get("Food"))
+        if value==1:
+            fmi=14.5
+        elif value==2:
+            fmi=10.6
+        elif value==3:
+            fmi=8.9
+        elif value==4:
+            fmi=7.6
+        elif value==5:
+            fmi=2.9
+        else:
+            fmi=2.5
+        foodv=int(request.form.get("foodv"))
+        #calc for transportation in kg
+        transportemmision=int(((car/0.6213)*404+(bus/0.6213)*68+(train/0.6213)*23+(plane/0.6213)*223+(bike/0.6213)*10)/1000)
+        #calc for electricity in kg
+        electricityemmision=int((ebill/7)*0.82)
+        #calc for food in kg
+        foodemmision=int((foodv/1000)*fmi)
+        new_user=db.engine.execute(f"INSERT INTO `emission` (`userid`,`temmsion`,`elecemmision`,`femmision`) VALUES ('{current_user.id}','{transportemmision}','{electricityemmision}','{foodemmision}')")
+        return render_template("homehome.html")
+    return render_template("homehome.html")
 @app.route("/test")
 def test():
     try:
@@ -162,213 +237,11 @@ def test():
     except Exception as e:
         print(e)
         return f'MY DATABASE IS NOT CONNECTED {e}'
-"""
+    
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    flash("Logout SuccessFul","warning")
     return redirect(url_for('login'))
-
-
-
-@app.route('/addHospitalUser',methods=['POST','GET'])
-def hospitalUser():
-   
-    if('user' in session and session['user']=="admin"):
-      
-        if request.method=="POST":
-            hcode=request.form.get('hcode')
-            email=request.form.get('email')
-            password=request.form.get('password')        
-            encpassword=generate_password_hash(password)  
-            hcode=hcode.upper()      
-            emailUser=Hospitaluser.query.filter_by(email=email).first()
-            if  emailUser:
-                flash("Email or srif is already taken","warning")
-         
-            db.engine.execute(f"INSERT INTO `hospitaluser` (`hcode`,`email`,`password`) VALUES ('{hcode}','{email}','{encpassword}') ")
-
-            # my mail starts from here if you not need to send mail comment the below line
-           
-            # mail.send_message('COVID CARE CENTER',sender=params['gmail-user'],recipients=[email],body=f"Welcome thanks for choosing us\nYour Login Credentials Are:\n Email Address: {email}\nPassword: {password}\n\nHospital Code {hcode}\n\n Do not share your password\n\n\nThank You..." )
-
-            flash("Data Sent and Inserted Successfully","warning")
-            return render_template("addHosUser.html")
-
-    else:
-        flash("Login and try Again","warning")
-        return render_template("addHosUser.html")
-    
-
-
-# testing wheather db is connected or not  
-
-
-@app.route("/logoutadmin")
-def logoutadmin():
-    session.pop('user')
-    flash("You are logout admin", "primary")
-
-    return redirect('/admin')
-
-
-def updatess(code):
-    postsdata=Hospitaldata.query.filter_by(hcode=code).first()
-    return render_template("hospitaldata.html",postsdata=postsdata)
-
-@app.route("/addhospitalinfo",methods=['POST','GET'])
-def addhospitalinfo():
-    email=current_user.email
-    posts=Hospitaluser.query.filter_by(email=email).first()
-    code=posts.hcode
-    postsdata=Hospitaldata.query.filter_by(hcode=code).first()
-
-    if request.method=="POST":
-        hcode=request.form.get('hcode')
-        hname=request.form.get('hname')
-        nbed=request.form.get('normalbed')
-        hbed=request.form.get('hicubeds')
-        ibed=request.form.get('icubeds')
-        vbed=request.form.get('ventbeds')
-        hcode=hcode.upper()
-        huser=Hospitaluser.query.filter_by(hcode=hcode).first()
-        hduser=Hospitaldata.query.filter_by(hcode=hcode).first()
-        if hduser:
-            flash("Data is already Present you can update it..","primary")
-            return render_template("hospitaldata.html")
-        if huser:            
-            db.engine.execute(f"INSERT INTO `hospitaldata` (`hcode`,`hname`,`normalbed`,`hicubed`,`icubed`,`vbed`) VALUES ('{hcode}','{hname}','{nbed}','{hbed}','{ibed}','{vbed}')")
-            flash("Data Is Added","primary")
-            return redirect('/addhospitalinfo')
-            
-
-        else:
-            flash("Hospital Code not Exist","warning")
-            return redirect('/addhospitalinfo')
-
-
-
-
-    return render_template("hospitaldata.html",postsdata=postsdata)
-
-
-@app.route("/hedit/<string:id>",methods=['POST','GET'])
-@login_required
-def hedit(id):
-    posts=Hospitaldata.query.filter_by(id=id).first()
-  
-    if request.method=="POST":
-        hcode=request.form.get('hcode')
-        hname=request.form.get('hname')
-        nbed=request.form.get('normalbed')
-        hbed=request.form.get('hicubeds')
-        ibed=request.form.get('icubeds')
-        vbed=request.form.get('ventbeds')
-        hcode=hcode.upper()
-        db.engine.execute(f"UPDATE `hospitaldata` SET `hcode` ='{hcode}',`hname`='{hname}',`normalbed`='{nbed}',`hicubed`='{hbed}',`icubed`='{ibed}',`vbed`='{vbed}' WHERE `hospitaldata`.`id`={id}")
-        flash("Slot Updated","info")
-        return redirect("/addhospitalinfo")
-
-    # posts=Hospitaldata.query.filter_by(id=id).first()
-    return render_template("hedit.html",posts=posts)
-
-
-@app.route("/hdelete/<string:id>",methods=['POST','GET'])
-@login_required
-def hdelete(id):
-    db.engine.execute(f"DELETE FROM `hospitaldata` WHERE `hospitaldata`.`id`={id}")
-    flash("Date Deleted","danger")
-    return redirect("/addhospitalinfo")
-
-
-@app.route("/pdetails",methods=['GET'])
-@login_required
-def pdetails():
-    code=current_user.srfid
-    print(code)
-    data=Bookingpatient.query.filter_by(srfid=code).first()
-    return render_template("detials.html",data=data)
-
-
-@app.route("/slotbooking",methods=['POST','GET'])
-@login_required
-def slotbooking():
-    query1=db.engine.execute(f"SELECT * FROM `hospitaldata` ")
-    query=db.engine.execute(f"SELECT * FROM `hospitaldata` ")
-    if request.method=="POST":
-        
-        srfid=request.form.get('srfid')
-        bedtype=request.form.get('bedtype')
-        hcode=request.form.get('hcode')
-        spo2=request.form.get('spo2')
-        pname=request.form.get('pname')
-        pphone=request.form.get('pphone')
-        paddress=request.form.get('paddress')  
-        check2=Hospitaldata.query.filter_by(hcode=hcode).first()
-        checkpatient=Bookingpatient.query.filter_by(srfid=srfid).first()
-        if checkpatient:
-            flash("already srd id is registered ","warning")
-            return render_template("booking.html",query=query,query1=query1)
-        
-        if not check2:
-            flash("Hospital Code not exist","warning")
-            return render_template("booking.html",query=query,query1=query1)
-
-        code=hcode
-        dbb=db.engine.execute(f"SELECT * FROM `hospitaldata` WHERE `hospitaldata`.`hcode`='{code}' ")        
-        bedtype=bedtype
-        if bedtype=="NormalBed":       
-            for d in dbb:
-                seat=d.normalbed
-                print(seat)
-                ar=Hospitaldata.query.filter_by(hcode=code).first()
-                ar.normalbed=seat-1
-                db.session.commit()
-                
-            
-        elif bedtype=="HICUBed":      
-            for d in dbb:
-                seat=d.hicubed
-                print(seat)
-                ar=Hospitaldata.query.filter_by(hcode=code).first()
-                ar.hicubed=seat-1
-                db.session.commit()
-
-        elif bedtype=="ICUBed":     
-            for d in dbb:
-                seat=d.icubed
-                print(seat)
-                ar=Hospitaldata.query.filter_by(hcode=code).first()
-                ar.icubed=seat-1
-                db.session.commit()
-
-        elif bedtype=="VENTILATORBed": 
-            for d in dbb:
-                seat=d.vbed
-                ar=Hospitaldata.query.filter_by(hcode=code).first()
-                ar.vbed=seat-1
-                db.session.commit()
-        else:
-            pass
-
-        check=Hospitaldata.query.filter_by(hcode=hcode).first()
-        if check!=None:
-            if(seat>0 and check):
-                res=Bookingpatient(srfid=srfid,bedtype=bedtype,hcode=hcode,spo2=spo2,pname=pname,pphone=pphone,paddress=paddress)
-                db.session.add(res)
-                db.session.commit()
-                flash("Slot is Booked kindly Visit Hospital for Further Procedure","success")
-                return render_template("booking.html",query=query,query1=query1)
-            else:
-                flash("Something Went Wrong","danger")
-                return render_template("booking.html",query=query,query1=query1)
-        else:
-            flash("Give the proper hospital Code","info")
-            return render_template("booking.html",query=query,query1=query1)
-            
-    
-    return render_template("booking.html",query=query,query1=query1)
-"""
 
 app.run(debug=True)
